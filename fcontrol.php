@@ -20,19 +20,20 @@
   
  }else if( $type == "read" ){
 
-  if( file_exists($dir) ){
-  	$handle = fopen($dir, "r");
-	  if( filesize($dir) > 0 ){
-		  $contents = fread($handle, filesize($dir));
-  	  		print($contents);  
-  		fclose($handle);
- 		}else{
- 		 print("Write your code here");	
-		}
-  }else{
-  	$handle = fopen($dir, "w");
-	print("Write your code here");	
-  } 
+   if( file_exists($dir) ){
+   	 $handle = fopen($dir, "r");
+  	 if( filesize($dir) > 0 ){
+	 	 $contents = fread($handle, filesize($dir));
+  	  	 print($contents);  
+  		 fclose($handle);
+ 	 }else{
+ 	         print("Write your code here");	
+	 }
+	
+   }else{
+        $handle = fopen($dir, "w");
+        print("Write your code here");	
+   } 
   
  }else{
   print("Invalid Request");	
